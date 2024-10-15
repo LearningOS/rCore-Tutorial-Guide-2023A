@@ -372,11 +372,11 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>第 10 行，解析 ELF 得到应用地址空间 <code class="docutils literal notranslate"><span class="pre">memory_set</span></code> ，用户栈在应用地址空间中的位置 <code class="docutils literal notranslate"><span class="pre">user_sp</span></code> 以及应用的入口点 <code class="docutils literal notranslate"><span class="pre">entry_point</span></code> 。</p></li>
-<li><p>第 11 行，手动查页表找到应用地址空间中的 Trap 上下文实际所在的物理页帧。</p></li>
-<li><p>第 16~18 行，为新进程分配 PID 以及内核栈，并记录下内核栈在内核地址空间的位置 <code class="docutils literal notranslate"><span class="pre">kernel_stack_top</span></code> 。</p></li>
-<li><p>第 20 行，在该进程的内核栈上压入初始化的任务上下文，使得第一次任务切换到它的时候可以跳转到 <code class="docutils literal notranslate"><span class="pre">trap_return</span></code> 并进入用户态开始执行。</p></li>
-<li><p>第 21 行，整合之前的部分信息创建进程控制块 <code class="docutils literal notranslate"><span class="pre">task_control_block</span></code> 。</p></li>
+<li><p>第 11 行，解析 ELF 得到应用地址空间 <code class="docutils literal notranslate"><span class="pre">memory_set</span></code> ，用户栈在应用地址空间中的位置 <code class="docutils literal notranslate"><span class="pre">user_sp</span></code> 以及应用的入口点 <code class="docutils literal notranslate"><span class="pre">entry_point</span></code> 。</p></li>
+<li><p>第 12 行，手动查页表找到应用地址空间中的 Trap 上下文实际所在的物理页帧。</p></li>
+<li><p>第 17~19 行，为新进程分配 PID 以及内核栈，并记录下内核栈在内核地址空间的位置 <code class="docutils literal notranslate"><span class="pre">kernel_stack_top</span></code> 。</p></li>
+<li><p>第 21 行，在该进程的内核栈上压入初始化的任务上下文，使得第一次任务切换到它的时候可以跳转到 <code class="docutils literal notranslate"><span class="pre">trap_return</span></code> 并进入用户态开始执行。</p></li>
+<li><p>第 22 行，整合之前的部分信息创建进程控制块 <code class="docutils literal notranslate"><span class="pre">task_control_block</span></code> 。</p></li>
 <li><p>第 39 行，初始化位于该进程应用地址空间中的 Trap 上下文，使得第一次进入用户态时，能正确跳转到应用入口点并设置好用户栈，
 同时也保证在 Trap 的时候用户态能正确进入内核态。</p></li>
 </ul>
