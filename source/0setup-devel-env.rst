@@ -146,8 +146,8 @@ Qemu 模拟器安装
                  gawk build-essential bison flex texinfo gperf libtool patchutils bc \
                  zlib1g-dev libexpat-dev pkg-config  libglib2.0-dev libpixman-1-dev git tmux python3
    # 下载源码包
-   # 如果下载速度过慢可以使用我们提供的百度网盘链接：https://pan.baidu.com/s/1z-iWIPjxjxbdFS2Qf-NKxQ
-   # 提取码 8woe
+   # 如果下载速度过慢可以使用我们提供的网盘链接：https://pan.baidu.com/s/1i3M-DjtlfBtUy0urGvsl4g 
+   # 提取码 lnpw
    wget https://download.qemu.org/qemu-7.0.0.tar.xz
    # 解压
    tar xvJf qemu-7.0.0.tar.xz
